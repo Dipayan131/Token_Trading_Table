@@ -6,7 +6,7 @@ import { wsMock } from "@/lib/websocketMock";
 import { Token, TokenCategory } from "@/types/token";
 import { generateMockTokens as initialData } from "@/lib/mockData";
 import { Button } from "@/components/ui/button";
-import { Settings, LayoutGrid, List, HelpCircle, Monitor, Bell, Volume2 } from "lucide-react";
+import { Settings, LayoutGrid, List, HelpCircle, Monitor, Volume2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 export function PulseDashboard() {
@@ -76,7 +76,7 @@ export function PulseDashboard() {
     };
   }, []);
 
-  const [sort, setSort] = useState<"mc" | "price" | "age">("mc");
+  const [sort] = useState<"mc" | "price" | "age">("mc");
 
   const sortTokens = (tokens: Token[]) => {
     return [...tokens].sort((a, b) => {

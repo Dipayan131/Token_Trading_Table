@@ -4,7 +4,7 @@ import { Token } from "@/types/token";
 import { TokenCard } from "./TokenCard";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
-import { Zap, SlidersHorizontal, ArrowDownUp } from "lucide-react";
+import { Zap, SlidersHorizontal } from "lucide-react";
 
 interface TokenListProps {
   title: string;

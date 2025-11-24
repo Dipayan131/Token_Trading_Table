@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Search, Star, Bell, Wallet, User, ChevronDown, Menu } from "lucide-react";
+import { Search, Star, Bell, Wallet, User, ChevronDown } from "lucide-react";
 import Link from "next/link";
 
 export function Header() {

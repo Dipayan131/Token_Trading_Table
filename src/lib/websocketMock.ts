@@ -48,7 +48,7 @@ class WebSocketMock {
             h1: (Math.random() * 10) - 5,
             h6: (Math.random() * 20) - 10,
             h24: (Math.random() * 50) - 25
-        } as any, 
+        } as Partial<Token["priceChange"]>, 
         price: isPositive ? 1 + changePercent : 1 - changePercent, // Multiplier
         transactions: {
             buy: isPositive ? 1 : 0,
@@ -69,7 +69,7 @@ class WebSocketMock {
             auditScore: Math.floor(Math.random() * 100),
             smartMoney: Math.floor(Math.random() * 100)
         }
-      } as any;
+      } as Partial<Token>;
     });
   }
 }

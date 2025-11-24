@@ -1,8 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { Wifi, Monitor, LayoutTemplate, Wallet, Twitter, TrendingUp, Settings, Disc, MessageSquare, ChevronDown } from "lucide-react";
+import { Monitor, LayoutTemplate, Wallet, Twitter, TrendingUp, Settings, Disc, MessageSquare, ChevronDown } from "lucide-react";
 
 export function Footer() {
   return (

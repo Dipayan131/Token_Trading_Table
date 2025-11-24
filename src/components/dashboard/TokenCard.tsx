@@ -3,39 +3,29 @@
 import { Token } from "@/types/token";
 import { Card } from "@/components/ui/card";
 import { cn, formatCompactNumber } from "@/lib/utils";
-import { Copy, Globe, Search, User, Zap, Flame, Trophy, Crown, BarChart2, Users, ChefHat, Crosshair, Ghost, Box } from "lucide-react";
-import { useEffect, useState } from "react";
+import { Copy, Globe, Search, User, Zap, Trophy, Crown, BarChart2, Users, ChefHat, Crosshair, Ghost, Box } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 interface TokenCardProps {
   token: Token;
 }
 
 export function TokenCard({ token }: TokenCardProps) {
-  const [priceColor, setPriceColor] = useState<"text-axiom-green" | "text-axiom-red" | "text-white">("text-white");
-  const [prevPrice, setPrevPrice] = useState(token.price);
-
-  useEffect(() => {
-    if (token.price > prevPrice) {
-      setPriceColor("text-axiom-green");
-    } else if (token.price < prevPrice) {
-      setPriceColor("text-axiom-red");
-    }
-    setPrevPrice(token.price);
-    
-    const timer = setTimeout(() => setPriceColor("text-white"), 1000);
-    return () => clearTimeout(timer);
-  }, [token.price]);
 
   return (
     <Card className="bg-card hover:bg-card-hover border-border transition-colors duration-200 p-3 flex gap-3 group relative overflow-hidden">
       {/* Left Side: Image & Address */}
       <div className="flex flex-col gap-1 shrink-0">
           <div className="relative w-16 h-16 rounded-md overflow-hidden bg-muted border border-border group-hover:border-axiom-blue/50 transition-colors">
-             <img 
+             <Image 
                 src={`https://api.dicebear.com/9.x/shapes/svg?seed=${token.symbol}`} 
                 alt={token.symbol}
+                width={64}
+                height={64}
                 className="w-full h-full object-cover"
+                unoptimized // To avoid domain config for now
+                priority
              />
              {/* Chain Icon Overlay */}
              <div className="absolute bottom-0 right-0 w-5 h-5 bg-[#0A0A0A] rounded-tl-md flex items-center justify-center z-10">
